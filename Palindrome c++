@@ -1,0 +1,50 @@
+/*
+Michael Vincent
+Lab1
+1/20/2015
+Purpose: To create a "reverse" function and test words to
+see if they are palindromes
+
+*/
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+//prototypes
+bool isPal(string word);
+
+int main(){
+
+//declare variables
+string word; 
+do
+{
+	cout<<"Enter a word (type 'q' to quit): ";
+	cin >> word;
+
+	if(!isPal(word)){
+		cout<<word<<" is not palindrome"<<endl;
+	}else{
+		cout<<word<<" is palindrome"<<endl;
+	}
+}
+	while (word != "q");
+	return(0);
+}
+
+bool isPal(string word) {
+	int j =word.length() -1;
+		for(int i=0;i<word.length();i++){
+				if(word[i]!=word[j]){ //if there are difference, this is not a palindrome
+					return false;
+				}
+				j--;//decrament j
+		}//end outer for
+
+return true;
+}//end function isPalindrome
+
+
+
